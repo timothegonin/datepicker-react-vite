@@ -6,12 +6,8 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/react-component-library.cjs",
-      "import": "./dist/react-component-library.es.js"
-    },
-    "./styles.css": {
-      "require": "./dist/styles.css",
-      "default": "./dist/styles.css"
+      "import": "./dist/ui.es.js",
+      "require": "./dist/ui.cjs"
     }
   },
   "files": [
@@ -19,14 +15,11 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && npm run build:css",
-    "build:css": "tailwindcss -m -i ./src/tailwind-entry.css -o ./dist/styles.css",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "storybook": "concurrently \"npm run storybook:css\" \"storybook dev -p 6006\"",
-    "storybook:css": "tailwindcss -w -i ./src/tailwind-entry.css -o ./src/index.css",
-    "build-storybook": "concurrently \"npm run build-storybook:css\" \"storybook build\"",
-    "build-storybook:css": "tailwindcss -m -i ./src/tailwind-entry.css -o ./src/index.css",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
