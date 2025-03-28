@@ -553,3 +553,46 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+
+.ui .ui-flex {
+  display: flex;
+}
+
+.ui .ui-w-full {
+  width: 100%;
+}
+
+.ui .ui-w-1\/2 {
+  width: 50%;
+}
+
+.ui .ui-flex-col {
+  flex-direction: column;
+}
+
+.ui .ui-gap-2 {
+  gap: 0.5rem;
+}
+
+.ui .ui-rounded {
+  border-radius: 0.25rem;
+}
+
+.ui .ui-border {
+  border-width: 1px;
+}
+
+.ui .ui-border-slate-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240 / var(--tw-border-opacity, 1));
+}
+
+.ui .ui-px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.ui .ui-py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
