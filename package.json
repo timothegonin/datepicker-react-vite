@@ -2,7 +2,7 @@
   "name": "datepicker-react-vite",
   "private": false,
   "description": "A simple datepicker for react",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "files": [
     "/dist"
