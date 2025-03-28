@@ -1,74 +1,70 @@
 {
   "name": "datepicker-react-vite",
   "private": false,
-  "version": "0.1.1",
+  "description": "A simple datepicker for react",
+  "version": "0.1.4",
   "type": "module",
+  "files": [
+    "/dist"
+  ],
+  "main": "./dist/ui.umd.js",
   "types": "dist/index.d.ts",
+  "module": "./dist/ui.es.js",
   "exports": {
     ".": {
-      "require": "./dist/react-component-library.cjs",
-      "import": "./dist/react-component-library.es.js"
+      "import": "./dist/ui.es.js",
+      "require": "./dist/ui.umd.js"
     },
     "./styles.css": {
       "require": "./dist/styles.css",
       "default": "./dist/styles.css"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && npm run build:css",
+    "build": "tsc && vite build && npm run build:css",
     "build:css": "tailwindcss -m -i ./src/tailwind-entry.css -o ./dist/styles.css",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "concurrently \"npm run storybook:css\" \"storybook dev -p 6006\"",
     "storybook:css": "tailwindcss -w -i ./src/tailwind-entry.css -o ./src/index.css",
-    "build-storybook": "concurrently \"npm run build-storybook:css\" \"storybook build\"",
+    "build-storybook": "storybook build",
     "build-storybook:css": "tailwindcss -m -i ./src/tailwind-entry.css -o ./src/index.css",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.0.15"
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.5",
-    "@eslint/js": "^9.21.0",
-    "@storybook/addon-essentials": "^8.6.3",
-    "@storybook/addon-onboarding": "^8.6.3",
-    "@storybook/addon-styling-webpack": "^1.0.1",
-    "@storybook/blocks": "^8.6.3",
-    "@storybook/builder-vite": "^8.6.3",
-    "@storybook/experimental-addon-test": "^8.6.3",
-    "@storybook/react": "^8.6.3",
-    "@storybook/react-vite": "^8.6.3",
-    "@storybook/test": "^8.6.3",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
+    "@chromatic-com/storybook": "^3.2.3",
+    "@eslint/js": "^9.17.0",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-onboarding": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/test": "^8.4.7",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
-    "@vitest/browser": "^3.0.7",
-    "@vitest/coverage-v8": "^3.0.7",
-    "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "eslint-plugin-storybook": "^0.11.3",
-    "globals": "^15.15.0",
-    "playwright": "^1.50.1",
-    "postcss": "^8.5.3",
-    "storybook": "^8.6.3",
-    "tailwindcss": "^4.0.16",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0",
-    "vite-plugin-dts": "^4.5.3",
-    "vitest": "^3.0.7"
-  },
-  "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "eslint-plugin-storybook": "^0.11.1",
+    "globals": "^15.14.0",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.4.7",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.5.0"
   },
   "eslintConfig": {
     "extends": [
